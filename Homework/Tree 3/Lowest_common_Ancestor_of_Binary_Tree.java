@@ -27,19 +27,20 @@ class Solution {
 //space complexity=O(n)+O(n)+O(n)
 
 class Solution {
-    public int findLCA(List<Integer> list1,List<Integer> list2){
-        for(int i=1;i<Math.min(list1.size(),list2.size());i++){
+    public TreeNode findLCA(List<TreeNode> list1,List<TreeNode> list2){
+        int n=Math.min(list1.size(),list2.size());
+        for(int i=1;i<n;i++){
             if(list1.get(i)!=list2.get(i)){
                 return list1.get(i-1);
             }
         }
-        return list1.get(Math.min(list1.size(),list2.size())-1);
+        return list1.get(n-1);
     }
-    public boolean findPath(TreeNode root,int node,List<Integer> list){
+    public boolean findPath(TreeNode root,int node,List<TreeNode> list){
         if(root==null){
             return false;
         }
-        list.add(root.val);
+        list.add(root);
         if(root.val==node){
             return true;
         }
@@ -50,12 +51,11 @@ class Solution {
         return false;
     }
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        List<Integer> pathRootToP=new ArrayList<>();
-        List<Integer> pathRootToQ=new ArrayList<>();
+        List<TreeNode> pathRootToP=new LinkedList<>();
+        List<TreeNode> pathRootToQ=new LinkedList<>();
         findPath(root,p.val,pathRootToP);
         findPath(root,q.val,pathRootToQ);
-        int LCA=findLCA(pathRootToP,pathRootToQ);
-        TreeNode node=new TreeNode(LCA);
-        return node;
+        TreeNode LCA=findLCA(pathRootToP,pathRootToQ);
+        return LCA;
     }
 }
