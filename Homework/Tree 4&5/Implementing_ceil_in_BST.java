@@ -1,3 +1,6 @@
+//BRUTE FORCE 
+//time complexity=O(n)+O(log2(n))
+//space complexity=O(n)+O(n)
 class Tree {
     void findInorder(Node root,List<Integer> list){
         if(root==null){
@@ -32,5 +35,35 @@ class Tree {
            }
        }
        return list.get(low);
+    }
+}
+//optimized solution
+// time complexity=O(log2(n))
+// space complexity=O(1)
+class Tree {
+    // Function to return the ceil of given number in BST.
+    int findCeil(Node root, int key) {
+        if (root == null) return -1;
+        // Code here
+        Node temp=root;
+        int i=Integer.MAX_VALUE;
+        while(temp!=null){
+            if(temp.data==key){
+                return temp.data;
+            }
+            else if(temp.data<key){
+                temp=temp.right;
+            }
+            else{
+                i=Math.min(i,temp.data);
+                temp=temp.left;
+            }
+        }
+        if(i==Integer.MAX_VALUE){
+            return -1;
+        }
+        else{
+            return i;
+        }
     }
 }
