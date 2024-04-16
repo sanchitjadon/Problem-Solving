@@ -72,3 +72,12 @@ public class AutoCompleteFeature {
 
     }
 }
+
+/*
+OUTPUT:=
+            abcd abba abdwh ab 
+            abcd abba abdwh ab 
+            cdefg 
+            abdwh 
+
+*/
