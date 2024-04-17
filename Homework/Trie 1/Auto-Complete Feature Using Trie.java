@@ -17,11 +17,9 @@ import java.util.List;
 
 class triea{
     triea[]childs;
-    int StringNo;
     List<Integer> possibles;
     public triea(){
         childs=new triea[26];
-        StringNo=0;
         possibles=new ArrayList<>();
     }
 }
