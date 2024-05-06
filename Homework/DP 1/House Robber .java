@@ -1,6 +1,6 @@
 class Solution {
     //    [recursion]
-    /*      
+         
     public int robbedMoney(int []nums,int idx){
         if(idx<=-1){
             return 0;
@@ -9,11 +9,10 @@ class Solution {
         int nontake=0+robbedMoney(nums,idx-1);
         return Math.max(take,nontake);
     }
-    */
 
     //      [Top Down + Memo]
-    /*     tc=O(n)
-           sc=O(n)+O(n)
+    //       tc=O(n)
+    //       sc=O(n)+O(n)
     public int robbery(int []nums,int idx,int[]dp){
         if(idx<=-1){
             return 0;
@@ -31,7 +30,7 @@ class Solution {
         Arrays.fill(dp,-1);
         return robbery(nums,nums.length-1,dp);
     }
-    */
+    
 
 
 
