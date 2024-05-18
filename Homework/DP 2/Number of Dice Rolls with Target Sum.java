@@ -59,3 +59,27 @@ class Solution {
         return countways(n,k,target,dp);
     }
 }
+
+// BOTTOM UP 
+class Solution{
+    public int numRollsToTarget(int n, int k, int target) {
+        int [][]dp=new int[n+1][target+1];
+        for(int i=0;i<dp.length;i++){
+            for(int j=0;j<dp[0].length;j++){
+                dp[i][j]=0;
+            }
+        }
+        dp[0][0]=1;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=target;j++){
+                int ans=0;
+                for(int p=1;p<=k;p++){
+                    if(j-p>=0)
+                        ans=(int)((ans+dp[i-1][j-p])%1000000007);
+                }
+                dp[i][j]=ans;
+            }
+        }
+        return dp[n][target];
+    }
+}
