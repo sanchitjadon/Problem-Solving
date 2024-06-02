@@ -57,7 +57,7 @@ class Solution {
     //          Bottom up
     //        --------------
 
-    /*
+    
     public int lengthOfLIS(int[]nums){
         int n=nums.length;
         if(n==1){
@@ -79,7 +79,7 @@ class Solution {
         }
         return maxLISLength;
     }
-    */
+    
 
 
 
