@@ -1,7 +1,7 @@
 class Solution {
     //           Recursion approach
     //          ----------------------
-    /*
+    
     public int recurrenceLIS(int[] nums,int idx,int prev){
         if(idx==nums.length){
             return 0;
@@ -17,7 +17,7 @@ class Solution {
         int n=nums.length;
         return recurrenceLIS(nums,0,-1);
     }
-    */
+    
 
 
 
