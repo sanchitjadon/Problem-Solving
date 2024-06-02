@@ -23,7 +23,7 @@ class Solution {
 
     //         Memoization
     //        --------------
-    /*
+    
 
     public int LIS(int []nums,int idx,int prev,int[][]dp){
         if(idx==nums.length){
@@ -50,7 +50,7 @@ class Solution {
         }
         return LIS(nums,0,-1,dp);
     }
-    */
+    
 
 
 
